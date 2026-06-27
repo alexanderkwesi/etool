@@ -68,7 +68,8 @@
     "eject": "react-scripts eject",
     "dev:server": "python ./backend/server.py",
     "dev:all": "concurrently \"npm run start\" \"npm run dev:server\"",
-    "lint": "eslint src --ext .js,.jsx --max-warnings 0"
+    "lint": "eslint src --ext .js,.jsx --max-warnings 0",
+    "vercel-install": "npm install --legacy-peer-deps"
   },
   "eslintConfig": {
     "extends": [
