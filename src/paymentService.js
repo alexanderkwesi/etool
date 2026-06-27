@@ -1,7 +1,7 @@
 // services/paymentService.js
 import axios from "axios";
 
-import { API_BASE, apiFetch, authApi, userApi, plansApi, paypalApi } from "./apiConfig";
+import { API_BASE } from "./apiConfig";
 
 
 // Create axios instance with default config
