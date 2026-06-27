@@ -216,7 +216,8 @@ const DocumentEditor = () => {
       setAiHistory([]);
     }
 
-    // Initialize editor history
+    // Initialize editor history with current content (intentional mount-only)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setEditorHistory([editorContent]);
     setHistoryIndex(0);
   }, []);
