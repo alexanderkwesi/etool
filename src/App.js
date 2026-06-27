@@ -1,6 +1,6 @@
 // App.js - Main application routing configuration
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Box, CircularProgress } from "@mui/material";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { SecurityProvider, useSecurity } from "./Use_Security";
@@ -53,7 +53,6 @@ import PDFAccessibility from "./Use_PDFAccessibility";
 import AccessibilityPage from "./Use_Accessibility_Features_Enabled";
 import DocumentCompliance from "./Use_DocumentCompliance";
 import TagStructure from "./Use_TagStructure";
-import BrailleScreenReaderPage from "./Use_Accessibility";
 
 // AI Components
 import AiPoweredFixes from "./Use_AIPowered_Fixes";
@@ -87,7 +86,6 @@ import BillPayment from "./Use_BillPayment";
 import SecurityDashboard from "./Use_Security";
 
 // Community Components
-import ForumOne from "./Use_CommunityForum";
 import ForumTwo from "./Use_CommunityForum2";
 
 // ============================================================
