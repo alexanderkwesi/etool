@@ -21,41 +21,26 @@ import {
   Zoom,
   Alert,
   Snackbar,
-  autocompleteClasses,
 } from "@mui/material";
 import {
-  ArrowForward,
-  Download,
   LinkedIn,
   Email,
   Phone,
   LocationOn,
   MonetizationOn,
   Group,
-  TrendingUp,
   Timeline,
   Shield,
   PictureAsPdf,
   Visibility,
   Share,
   MenuBook,
-  BusinessCenter,
   School,
   Verified,
-  Rocket,
-  Close as CloseIcon,
 } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 
 // Styled components
-//const GradientText = styled(Typography)(({ theme }) => ({
- // background: "linear-gradient(135deg, #6a0dad 0%, #8a2be2 100%)",
-//  WebkitBackgroundClip: "text",
-//  WebkitTextFillColor: "transparent",
- // backgroundClip: "text",
- // fontWeight: 800,
-//}));
-
 const GlassCard = styled(Paper)(({ theme }) => ({
   background: "rgba(255, 255, 255, 0.95)",
   backdropFilter: "blur(10px)",
