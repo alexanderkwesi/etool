@@ -102,7 +102,7 @@ apiClient.interceptors.response.use(
 );
 
 // Payment service methods
-export const paymentService = {
+const paymentService = {
   /**
    * Verify payment with backend
    * @param {Object} paymentData - Payment verification data
