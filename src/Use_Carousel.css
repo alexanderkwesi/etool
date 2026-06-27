@@ -1,0 +1,154 @@
+/* Carousel.css */
+.carousel-container {
+    background: linear-gradient(135deg, #6a0dad, #8a2be2);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(106, 13, 173, 0.4);
+    margin: 2rem auto;
+    max-width: 800px;
+    color: white;
+    text-align: center;
+}
+
+.carousel-container h2 {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-wrapper {
+    perspective: 1000px;
+    height: 350px;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.carousel-item {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    backface-visibility: hidden;
+    color: #6a0dad;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    z-index: 10 !important;
+}
+
+.file-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.file-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.file-extension {
+    font-size: 0.9rem;
+    color: #8a2be2;
+    font-family: monospace;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+.carousel-indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .carousel-wrapper {
+        height: 300px;
+    }
+
+    .carousel-item {
+        width: 160px;
+        height: 160px;
+        left: calc(50% - 80px);
+    }
+
+    .file-icon {
+        font-size: 2.5rem;
+    }
+
+    .file-name {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-wrapper {
+        height: 250px;
+    }
+
+    .carousel-item {
+        width: 140px;
+        height: 140px;
+        left: calc(50% - 70px);
+    }
+
+    .file-icon {
+        font-size: 2rem;
+    }
+
+    .file-name {
+        font-size: 1rem;
+    }
+
+    .file-extension {
+        font-size: 0.8rem;
+    }
+}

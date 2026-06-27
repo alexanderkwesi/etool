@@ -1,0 +1,282 @@
+/* Solutions.css */
+/* Additional custom styles for Solutions page */
+
+/* Floating animation for cards */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.float-animation {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Gradient text animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #6a0dad, #8a2be2, #6a0dad, #9370db);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 8s ease infinite;
+}
+
+/* Industry tab hover effect */
+.industry-tab {
+    transition: all 0.3s ease;
+}
+
+.industry-tab:hover {
+    background-color: rgba(106, 13, 173, 0.05);
+    border-radius: 8px;
+}
+
+/* Card shine effect */
+.card-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: rotate(25deg);
+    animation: shine 6s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -60%;
+    }
+
+    20% {
+        left: 120%;
+    }
+
+    100% {
+        left: 120%;
+    }
+}
+
+/* Pulse animation for CTAs */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(106, 13, 173, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(106, 13, 173, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(106, 13, 173, 0);
+    }
+}
+
+.pulse-button {
+    animation: pulse 2s infinite;
+}
+
+/* Industry-specific color pulses */
+@keyframes financialPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(21, 101, 192, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(21, 101, 192, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(21, 101, 192, 0);
+    }
+}
+
+@keyframes healthcarePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(46, 125, 50, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+    }
+}
+
+@keyframes legalPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(106, 13, 173, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(106, 13, 173, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(106, 13, 173, 0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .gradient-text {
+        font-size: 2rem !important;
+    }
+
+    .industry-tab {
+        min-width: 120px !important;
+    }
+}
+
+/* Print styles for investor decks */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .card-shine::after {
+        display: none;
+    }
+
+    .gradient-text {
+        -webkit-text-fill-color: #6a0dad;
+        background: none;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #6a0dad, #8a2be2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #5a0cad, #7a2ad2);
+}
+
+/* Loading skeleton animation */
+@keyframes loading {
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: 200px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: loading 1.5s infinite;
+}
+
+/* Industry card hover effects */
+.industry-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.industry-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Gradient border effect */
+.gradient-border {
+    position: relative;
+    border: double 1px transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(white, white),
+        linear-gradient(45deg, #6a0dad, #8a2be2);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Staggered fade-in for grid items */
+.stagger-fade-in>*:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stagger-fade-in>*:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stagger-fade-in>*:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.stagger-fade-in>*:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.stagger-fade-in>*:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.stagger-fade-in>*:nth-child(6) {
+    animation-delay: 0.6s;
+}

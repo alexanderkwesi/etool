@@ -1,0 +1,12 @@
+/* Force the button to show */
+.paypal-buttons {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 9999 !important;
+}
+
+/* Ensure iframe is visible */
+.paypal-buttons iframe {
+    display: block !important;
+}

@@ -1,0 +1,23 @@
+/* Remediation.css */
+.remediation-page {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.remediation-page .MuiPaper-root {
+    border-radius: 8px;
+}
+
+.remediation-page .MuiListItem-root {
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.remediation-page .MuiButton-root {
+    text-transform: none;
+    border-radius: 6px;
+}
+
+.remediation-page .MuiChip-root {
+    margin: 0 4px 4px 0;
+}

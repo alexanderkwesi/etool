@@ -1,0 +1,288 @@
+/* ROICalculator.css */
+/* Custom styles for ROI Calculator page */
+
+/* Slider custom styling */
+.custom-slider {
+    --track-height: 6px;
+    --thumb-size: 22px;
+}
+
+.custom-slider .MuiSlider-track {
+    background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    height: var(--track-height);
+    border-radius: 3px;
+}
+
+.custom-slider .MuiSlider-rail {
+    height: var(--track-height);
+    background-color: #e0e0e0;
+    border-radius: 3px;
+}
+
+.custom-slider .MuiSlider-thumb {
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    background-color: white;
+    border: 2px solid #6a0dad;
+    box-shadow: 0 2px 8px rgba(106, 13, 173, 0.2);
+    transition: all 0.2s ease;
+}
+
+.custom-slider .MuiSlider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(106, 13, 173, 0.3);
+}
+
+.custom-slider .MuiSlider-thumb.Mui-focusVisible {
+    box-shadow: 0 0 0 8px rgba(106, 13, 173, 0.16);
+}
+
+.custom-slider .MuiSlider-valueLabel {
+    background: linear-gradient(45deg, #6a0dad, #8a2be2);
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-weight: 600;
+}
+
+/* Number counter animation */
+@keyframes countUp {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.count-up {
+    animation: countUp 0.5s ease-out;
+}
+
+/* Savings meter animation */
+@keyframes fillMeter {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.savings-meter {
+    animation: fillMeter 1.5s ease-out forwards;
+}
+
+/* ROI percentage circle */
+.roi-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(#6a0dad 0deg, #8a2be2 360deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roi-circle::before {
+    content: '';
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: white;
+}
+
+.roi-circle-inner {
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    color: #6a0dad;
+}
+
+/* Input field styling */
+.roi-input-field {
+    transition: all 0.3s ease;
+}
+
+.roi-input-field:focus {
+    border-color: #6a0dad;
+    box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+}
+
+/* Comparison bar animation */
+@keyframes growRight {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.comparison-bar {
+    animation: growRight 1s ease-out forwards;
+    transform-origin: left;
+}
+
+/* Industry selector hover effect */
+.industry-option {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.industry-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.industry-option.selected {
+    border: 2px solid #6a0dad;
+    background-color: rgba(106, 13, 173, 0.05);
+}
+
+/* Tooltip custom styling */
+.custom-tooltip {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 8px 16px !important;
+    font-size: 0.875rem !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.custom-tooltip::after {
+    border-top-color: #2a2a2a !important;
+}
+
+/* Result card entrance animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.result-card {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Number formatting */
+.currency-large {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #6a0dad, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.percentage-large {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+
+    .currency-large,
+    .percentage-large {
+        font-size: 2rem;
+    }
+
+    .roi-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .roi-circle::before {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .currency-large,
+    .percentage-large {
+        font-size: 1.75rem;
+    }
+}
+
+/* Print styles for ROI reports */
+@media print {
+    .roi-circle {
+        background: none;
+        border: 3px solid #6a0dad;
+    }
+
+    .gradient-text {
+        -webkit-text-fill-color: #6a0dad;
+        background: none;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* Savings gauge */
+.savings-gauge {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(90deg, #f44336, #ff9800, #4caf50);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.savings-gauge-fill {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: var(--savings-percent);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    border-left: 2px solid white;
+}
+
+/* ROI badge */
+.roi-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(45deg, #6a0dad15, #8a2be215);
+    border: 1px solid #6a0dad;
+    border-radius: 20px;
+    color: #6a0dad;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Loading state for calculations */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.calculating {
+    animation: pulse 1.5s ease-in-out infinite;
+}

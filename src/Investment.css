@@ -1,0 +1,385 @@
+/* InvestorRelations.css */
+/* Custom styles for Investor Relations page */
+
+/* Hero section parallax effect */
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(106, 13, 173, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+    animation: parallaxMove 20s infinite alternate;
+}
+
+@keyframes parallaxMove {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.1) translate(-2%, -1%);
+    }
+}
+
+/* Market growth chart animation */
+@keyframes drawBar {
+    from {
+        height: 0%;
+    }
+
+    to {
+        height: 100%;
+    }
+}
+
+.market-bar {
+    animation: drawBar 1.5s ease-out forwards;
+    transform-origin: bottom;
+}
+
+/* Stock ticker style */
+.ticker-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.ticker-content {
+    display: inline-block;
+    animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.ticker-content:hover {
+    animation-play-state: paused;
+}
+
+/* Financial table styling */
+.financial-table {
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.financial-table-row {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.financial-table-row:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(106, 13, 173, 0.15);
+}
+
+.financial-table-cell {
+    padding: 16px !important;
+    border-bottom: none !important;
+}
+
+.financial-table-row td:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.financial-table-row td:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* Investor card hover effect */
+.investor-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.investor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.investor-card:hover::before {
+    left: 100%;
+}
+
+.investor-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(106, 13, 173, 0.2);
+}
+
+/* Metric card counter animation */
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #6a0dad, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+}
+
+.metric-value::after {
+    content: attr(data-value);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #6a0dad, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: countNumber 2s ease-out;
+}
+
+@keyframes countNumber {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Leadership team card */
+.leader-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.leader-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    transition: width 0.3s ease;
+}
+
+.leader-card:hover::after {
+    width: 100%;
+}
+
+.leader-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Market share donut chart */
+.market-share-chart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(#6a0dad 0deg 12deg,
+            #8a2be2 12deg 25deg,
+            #9c27b0 25deg 40deg,
+            #e1bee7 40deg 70deg,
+            #ce93d8 70deg 100deg,
+            #ba68c8 100deg 360deg);
+    mask: radial-gradient(circle at center, transparent 60%, black 61%);
+}
+
+/* Investment highlight */
+.investment-highlight {
+    position: relative;
+    padding: 4px 12px;
+    background: linear-gradient(45deg, #4caf5015, #2196f315);
+    border-left: 4px solid #4caf50;
+    border-radius: 0 8px 8px 0;
+    font-weight: 600;
+}
+
+/* Growth arrow animation */
+@keyframes growArrow {
+    0% {
+        transform: translateX(0) scaleX(0.8);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateX(5px) scaleX(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0) scaleX(0.8);
+        opacity: 0.5;
+    }
+}
+
+.growth-arrow {
+    animation: growArrow 2s infinite;
+}
+
+/* Investor deck download button */
+.download-deck-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.download-deck-btn::before {
+    content: '⬇️';
+    position: absolute;
+    left: -30px;
+    transition: left 0.3s ease;
+}
+
+.download-deck-btn:hover::before {
+    left: 20px;
+}
+
+.download-deck-btn:hover {
+    padding-left: 40px !important;
+}
+
+/* Timeline styling */
+.investment-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.investment-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #6a0dad, #8a2be2);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #6a0dad, #8a2be2);
+    border: 2px solid white;
+    box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+    .metric-value {
+        font-size: 2rem;
+    }
+
+    .market-share-chart {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .metric-value {
+        font-size: 1.75rem;
+    }
+
+    .investment-timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-item::before {
+        left: 9px;
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Print styles for investor materials */
+@media print {
+
+    .parallax-bg,
+    .ticker-container,
+    .growth-arrow {
+        display: none !important;
+    }
+
+    .metric-value {
+        -webkit-text-fill-color: #6a0dad;
+        background: none;
+    }
+
+    .investor-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .download-deck-btn {
+        display: none !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .financial-table-row:hover {
+        background-color: rgba(106, 13, 173, 0.2) !important;
+    }
+
+    .investment-highlight {
+        background: rgba(76, 175, 80, 0.1);
+        border-left-color: #4caf50;
+    }
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+    .metric-value {
+        -webkit-text-fill-color: CanvasText;
+        background: none;
+    }
+
+    .investor-card {
+        border: 1px solid CanvasText;
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .parallax-bg,
+    .ticker-content,
+    .metric-value::after,
+    .investor-card::before {
+        animation: none;
+    }
+
+    .investor-card:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,355 @@
+/* Navigation.css - Styles for Documentation Navigation Component */
+
+/* Base Navigation Container */
+.navigation-container {
+    padding: 1rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border-right: 1px solid #e2e8f0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.navigation-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.navigation-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.navigation-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.navigation-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Navigation List */
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Navigation Items */
+.nav-item {
+    width: 100%;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item:hover {
+    transform: translateX(4px);
+}
+
+.nav-button {
+    width: 100%;
+    text-align: left;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    color: #475569;
+    background: transparent;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button:hover {
+    color: #2563eb;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0.02) 100%);
+    box-shadow: 0 1px 3px rgba(37, 99, 235, 0.1);
+}
+
+.nav-button:active {
+    transform: scale(0.98);
+}
+
+.nav-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Active state indicator (can be added dynamically via JS) */
+.nav-button.active {
+    color: #2563eb;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+    font-weight: 500;
+}
+
+.nav-button.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #2563eb;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Navigation Indicator Dot */
+.nav-dot {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    margin-right: 0.75rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-button:hover .nav-dot {
+    background-color: #60a5fa;
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.nav-button.active .nav-dot {
+    background-color: #2563eb;
+    transform: scale(1.3);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.nav-dot::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.3;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Quick Links Section */
+.quick-links-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.quick-links-title {
+    padding: 0 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.quick-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.quick-link-item {
+    position: relative;
+}
+
+.quick-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: #475569;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 0.375rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-link:hover {
+    color: #2563eb;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0.02) 100%);
+    transform: translateX(4px);
+}
+
+.quick-link::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.25rem;
+    height: 1px;
+    background: linear-gradient(90deg, #2563eb, transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.quick-link:hover::before {
+    transform: scaleX(1);
+}
+
+.quick-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigation-container {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navigation-container.mobile-open {
+        left: 0;
+    }
+
+    .nav-button {
+        padding: 0.75rem 1rem;
+    }
+
+    .quick-link {
+        padding: 0.625rem 1rem;
+    }
+}
+
+/* Desktop specific optimizations */
+@media (min-width: 769px) {
+    .navigation-container {
+        min-width: 260px;
+        max-width: 300px;
+    }
+}
+
+/* Mobile Menu Toggle Button (add to your JS if needed) */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .navigation-container {
+        background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+        border-right-color: #334155;
+    }
+
+    .nav-button {
+        color: #cbd5e1;
+    }
+
+    .nav-button:hover {
+        color: #60a5fa;
+        background: linear-gradient(90deg, rgba(96, 165, 250, 0.1) 0%, rgba(96, 165, 250, 0.05) 100%);
+    }
+
+    .nav-button.active {
+        color: #60a5fa;
+        background: linear-gradient(90deg, rgba(96, 165, 250, 0.15) 0%, rgba(96, 165, 250, 0.08) 100%);
+    }
+
+    .nav-dot {
+        background-color: #475569;
+    }
+
+    .quick-links-section {
+        border-top-color: #334155;
+    }
+
+    .quick-links-title {
+        color: #64748b;
+    }
+
+    .quick-link {
+        color: #cbd5e1;
+    }
+
+    .quick-link:hover {
+        color: #60a5fa;
+    }
+
+    .navigation-container::-webkit-scrollbar-track {
+        background: #1e293b;
+    }
+
+    .navigation-container::-webkit-scrollbar-thumb {
+        background: #475569;
+    }
+}
+
+/* Animation for scroll highlighting */
+@keyframes highlightFlash {
+
+    0%,
+    100% {
+        background: transparent;
+    }
+
+    50% {
+        background: rgba(37, 99, 235, 0.1);
+    }
+}
+
+.nav-button.highlight {
+    animation: highlightFlash 1s ease 2;
+}
+
+/* Smooth transitions */
+.nav-button,
+.quick-link,
+.nav-dot {
+    will-change: transform, background-color, color;
+}

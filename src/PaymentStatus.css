@@ -1,0 +1,49 @@
+/* components/PaymentStatus.css */
+.payment-status {
+    text-align: center;
+    padding: 20px;
+}
+
+.status-success {
+    font-size: 4em;
+    margin-bottom: 15px;
+}
+
+.payment-status h3 {
+    color: #38a169;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+.payment-details {
+    background: #f0fff4;
+    border: 1px solid #9ae6b4;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #c6f6d5;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.status-badge {
+    background: #38a169;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.success-actions {
+    margin-top: 25px;
+}

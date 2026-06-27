@@ -1,0 +1,32 @@
+.user-categorization-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8f4ff 0%, #e6e6fa 100%);
+    padding: 20px;
+}
+
+/* Paper tear effect */
+.user-categorization-container::before,
+.user-categorization-container::after {
+    content: "";
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+}
+
+.user-categorization-container::before {
+    top: -75px;
+    left: -75px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 #f8f4ff, 0 0 0 0px #6a0dad, 70px 70px 0 0 #f8f4ff, 70px 70px 0 5px #6a0dad;
+}
+
+.user-categorization-container::after {
+    bottom: -75px;
+    right: -75px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 #f8f4ff, 0 0 0 0px #6a0dad, -70px -70px 0 0 #f8f4ff, -70px -70px 0 5px #6a0dad;
+}

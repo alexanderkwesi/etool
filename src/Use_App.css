@@ -1,0 +1,19 @@
+/* Dashboard.css */
+.dashboard {
+    min-height: 100vh;
+    background-color: #f5f7fa;
+}
+
+.feature-card {
+    height: 100%;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.MuiPaper-root {
+    border-radius: 12px;
+}
