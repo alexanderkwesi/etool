@@ -72,7 +72,7 @@ apiClient.interceptors.response.use(
 );
 
 // Payment service methods — const only, exported via default below
-const paymentService = {
+export default const paymentService = {
   verifyPayment: async (paymentData) => {
     try {
       console.log("Verifying payment:", { orderID: paymentData.orderID, amount: paymentData.amount });
@@ -178,4 +178,3 @@ export const paymentUtils = {
   },
 };
 
-export default paymentService;
