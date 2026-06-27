@@ -108,4 +108,10 @@
     "vm": false,
     "async_hooks": false
   }
+  "eslintConfig": {
+  "extends": ["react-app"],
+  "rules": {
+    "no-unused-vars": "warn"
+  }
+}
 }
