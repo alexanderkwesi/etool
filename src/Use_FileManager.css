@@ -1,0 +1,113 @@
+/* File: src/components/FileManager/FileManager.css */
+.file-manager {
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.file-manager-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.file-manager-header h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.file-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+}
+
+.file-icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.file-details {
+    flex: 1;
+}
+
+.file-name {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.file-meta {
+    margin: 0;
+    color: #666;
+    font-size: 12px;
+}
+
+.file-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-view {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.btn-view:hover {
+    background-color: #bbdefb;
+}
+
+.btn-edit {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+.btn-edit:hover {
+    background-color: #ffe0b2;
+}
+
+.btn-delete {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.btn-delete:hover {
+    background-color: #ffcdd2;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}

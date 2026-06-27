@@ -1,0 +1,334 @@
+/* FeaturesPage.css */
+.features-page {
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.features-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.features-page h1 {
+    text-align: center;
+    color: #6a0dad;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.page-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Billing Toggle */
+.billing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    gap: 1rem;
+}
+
+.billing-toggle span {
+    color: #666;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.billing-toggle span.active {
+    color: #6a0dad;
+    font-weight: 600;
+}
+
+.toggle-switch {
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch:hover {
+    background-color: #bbb;
+}
+
+.switch {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.switch.annual {
+    transform: translateX(26px);
+}
+
+/* Pricing Cards */
+.pricing-cards {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(106, 13, 173, 0.15);
+}
+
+.pricing-card.selected {
+    border-color: #6a0dad;
+    transform: scale(1.03);
+}
+
+.pricing-card.popular {
+    border-color: #ff6b6b;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #ff6b6b;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.pricing-card h3 {
+    color: #6a0dad;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+}
+
+.plan-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    min-height: 60px;
+}
+
+.select-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #6a0dad;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select-button:hover {
+    background: #5a0ca8;
+}
+
+.select-button.selected {
+    background: #4a0a93;
+}
+
+/* Comparison Table */
+.features-comparison {
+    margin-bottom: 4rem;
+}
+
+.features-comparison h2 {
+    text-align: center;
+    color: #6a0dad;
+    margin-bottom: 2rem;
+}
+
+.comparison-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+    display: flex;
+    background: #6a0dad;
+    color: white;
+    font-weight: 600;
+}
+
+.feature-column {
+    flex: 2;
+    padding: 1rem;
+}
+
+.plan-column {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+}
+
+.table-row {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.table-row:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.table-row .feature-column {
+    font-weight: 500;
+}
+
+.table-row .plan-column {
+    text-align: center;
+}
+
+/* Selected Plan Details */
+.selected-plan-details {
+    margin-bottom: 4rem;
+}
+
+.selected-plan-details h2 {
+    text-align: center;
+    color: #6a0dad;
+    margin-bottom: 2rem;
+}
+
+.plan-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #6a0dad;
+    min-width: 30px;
+}
+
+.feature-content h4 {
+    margin: 0 0 0.5rem;
+    color: #333;
+}
+
+.feature-content p {
+    margin: 0;
+    color: #666;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, #6a0dad, #8a2be2);
+    border-radius: 12px;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.cta-section h2 {
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    padding: 12px 30px;
+    background: white;
+    color: #6a0dad;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .table-header,
+    .table-row {
+        flex-direction: column;
+    }
+
+    .feature-column,
+    .plan-column {
+        padding: 0.5rem;
+    }
+
+    .plan-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .billing-toggle {
+        flex-wrap: wrap;
+    }
+}

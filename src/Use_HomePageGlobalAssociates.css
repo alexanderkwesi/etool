@@ -1,0 +1,472 @@
+/* CompetitiveEdgeSlide.css */
+/* Enterprise-grade styling for Competitive Edge Pitch Deck */
+/* Matches Use_LandingPage.css design language */
+
+/* ===== GLOBAL STYLES ===== */
+.competitive-edge-root {
+    background-color: #fafbff;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ===== BACKGROUND PATTERNS & EFFECTS ===== */
+.edge-pattern-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(106, 13, 173, 0.05) 0%, rgba(138, 43, 226, 0.05) 100%),
+        repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(106, 13, 173, 0.02) 15px, rgba(106, 13, 173, 0.02) 16px);
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 30% 0%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Holographic effect - similar to ChartsSection */
+.edge-holographic-overlay {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(ellipse at 80% 20%, rgba(0, 255, 255, 0.03) 0%, transparent 50%);
+    transform: translateZ(-30px) rotateX(10deg);
+    filter: blur(15px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.edge-gradient-text {
+    background: linear-gradient(45deg, #6a0dad, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+.edge-section-title {
+    font-weight: bold;
+    border-left: 6px solid #6a0dad;
+    padding-left: 16px;
+    color: #333;
+    margin-bottom: 32px;
+}
+
+.edge-section-title-orange {
+    font-weight: bold;
+    border-left: 6px solid #ed6c02;
+    padding-left: 16px;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+/* ===== CHIP STYLES ===== */
+.edge-chip-purple {
+    background-color: rgba(106, 13, 173, 0.1) !important;
+    color: #6a0dad !important;
+    font-weight: bold !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(106, 13, 173, 0.2) !important;
+}
+
+.edge-chip-green {
+    background-color: rgba(46, 125, 50, 0.1) !important;
+    color: #2e7d32 !important;
+    font-weight: 500 !important;
+}
+
+.edge-chip-blue {
+    background-color: rgba(21, 101, 192, 0.1) !important;
+    color: #1565c0 !important;
+    font-weight: 500 !important;
+}
+
+.edge-chip-white-transparent {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
+    backdrop-filter: blur(4px);
+}
+
+/* ===== CARD STYLES ===== */
+.edge-problem-card {
+    background: linear-gradient(135deg, #fff4e5 0%, #ffe8d9 100%);
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid rgba(237, 108, 2, 0.2);
+    box-shadow: 0 8px 20px rgba(237, 108, 2, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+}
+
+.edge-problem-card:hover {
+    box-shadow: 0 12px 30px rgba(237, 108, 2, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Pillar Cards - Three strategic moats */
+.edge-pillar-card {
+    height: 100%;
+    border-radius: 24px;
+    padding: 24px;
+    border: 1px solid;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.edge-pillar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.edge-pillar-accessibility {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    border-color: rgba(106, 13, 173, 0.2);
+}
+
+.edge-pillar-crm {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-color: rgba(46, 125, 50, 0.2);
+}
+
+.edge-pillar-security {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-color: rgba(21, 101, 192, 0.2);
+}
+
+/* Avatar icons in pillars */
+.edge-avatar-purple {
+    background-color: #6a0dad !important;
+    margin-right: 16px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 10px rgba(106, 13, 173, 0.3);
+}
+
+.edge-avatar-green {
+    background-color: #2e7d32 !important;
+    margin-right: 16px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+}
+
+.edge-avatar-blue {
+    background-color: #1565c0 !important;
+    margin-right: 16px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 10px rgba(21, 101, 192, 0.3);
+}
+
+/* ===== COMPETITIVE MATRIX TABLE ===== */
+.edge-matrix-container {
+    border-radius: 24px !important;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(106, 13, 173, 0.1) !important;
+    overflow: hidden !important;
+    margin-bottom: 32px;
+}
+
+.edge-matrix-header {
+    background-color: #f5f0fa !important;
+}
+
+.edge-matrix-header-cell {
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+    padding: 16px !important;
+}
+
+.edge-matrix-startup-cell {
+    background-color: rgba(106, 13, 173, 0.06) !important;
+    font-weight: bold !important;
+    color: #6a0dad !important;
+    font-size: 1.2rem !important;
+}
+
+.edge-matrix-feature-cell {
+    font-weight: 600 !important;
+    color: #333;
+}
+
+.edge-matrix-highlight-row {
+    background-color: rgba(106, 13, 173, 0.02);
+}
+
+/* Icons in matrix */
+.edge-check-green {
+    color: #4caf50 !important;
+    font-size: 22px !important;
+}
+
+.edge-check-purple {
+    color: #6a0dad !important;
+    font-size: 22px !important;
+}
+
+.edge-remove-red {
+    color: #d32f2f !important;
+    font-size: 22px !important;
+}
+
+.edge-remove-orange {
+    color: #ff9800 !important;
+    font-size: 22px !important;
+}
+
+/* ===== INVESTOR THESIS CARD ===== */
+.edge-thesis-card {
+    background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-radius: 28px;
+    padding: 32px;
+    color: white;
+    border: 1px solid #6a0dad;
+    box-shadow: 0 20px 40px rgba(106, 13, 173, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.edge-thesis-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 70%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+    transform: rotate(15deg);
+    pointer-events: none;
+}
+
+.edge-thesis-metric {
+    text-align: center;
+}
+
+.edge-thesis-metric-number {
+    font-weight: bold;
+    color: #8a2be2;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+/* ===== STACKS & LISTS ===== */
+.edge-feature-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.edge-value-statement {
+    color: #6a0dad;
+    font-weight: bold;
+    font-size: 0.75rem;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.edge-value-statement-green {
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 0.75rem;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.edge-value-statement-blue {
+    color: #1565c0;
+    font-weight: bold;
+    font-size: 0.75rem;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===== DIVIDERS & SEPARATORS ===== */
+.edge-divider {
+    border-color: rgba(106, 13, 173, 0.1) !important;
+    margin: 48px 0 !important;
+}
+
+.edge-caption {
+    color: #888;
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes edge-pulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+.edge-pulse-element {
+    animation: edge-pulse 8s ease-in-out infinite;
+}
+
+@keyframes edge-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.edge-float-element {
+    animation: edge-float 6s ease-in-out infinite;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 900px) {
+    .edge-pattern-bg {
+        width: 60%;
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 20% 0%);
+    }
+
+    .edge-section-title,
+    .edge-section-title-orange {
+        border-left-width: 4px;
+        padding-left: 12px;
+        font-size: 1.8rem;
+    }
+
+    .edge-thesis-card {
+        padding: 24px;
+    }
+
+    .edge-thesis-metric-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .edge-problem-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .edge-pattern-bg {
+        width: 80%;
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 10% 0%);
+    }
+
+    .edge-matrix-container {
+        border-radius: 16px !important;
+    }
+
+    .edge-matrix-header-cell {
+        font-size: 0.9rem !important;
+        padding: 12px 8px !important;
+    }
+
+    .edge-thesis-metric-number {
+        font-size: 2rem;
+    }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.edge-z-index-high {
+    position: relative;
+    z-index: 2;
+}
+
+.edge-z-index-low {
+    position: relative;
+    z-index: 0;
+}
+
+.edge-no-wrap {
+    white-space: nowrap;
+}
+
+.edge-text-center {
+    text-align: center;
+}
+
+.edge-mb-1 {
+    margin-bottom: 8px;
+}
+
+.edge-mb-2 {
+    margin-bottom: 16px;
+}
+
+.edge-mb-3 {
+    margin-bottom: 24px;
+}
+
+.edge-mb-4 {
+    margin-bottom: 32px;
+}
+
+.edge-mb-5 {
+    margin-bottom: 48px;
+}
+
+.edge-mb-6 {
+    margin-bottom: 64px;
+}
+
+.edge-mt-1 {
+    margin-top: 8px;
+}
+
+.edge-mt-2 {
+    margin-top: 16px;
+}
+
+.edge-mt-3 {
+    margin-top: 24px;
+}
+
+.edge-mt-4 {
+    margin-top: 32px;
+}
+
+.edge-mt-5 {
+    margin-top: 48px;
+}
+
+/* ===== SCROLLBAR STYLING (Optional) ===== */
+.edge-scrollable::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.edge-scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.edge-scrollable::-webkit-scrollbar-thumb {
+    background: #6a0dad;
+    border-radius: 10px;
+}
+
+.edge-scrollable::-webkit-scrollbar-thumb:hover {
+    background: #5a0cad;
+}
