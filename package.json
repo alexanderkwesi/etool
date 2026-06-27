@@ -75,7 +75,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": "warn"
+    }
   },
   "browserslist": {
     "production": [
@@ -107,10 +110,5 @@
     "querystring": false,
     "vm": false,
     "async_hooks": false
-  }
-  "eslintConfig": {
-  "extends": ["react-app"],
-  "rules": {
-    "no-unused-vars": "warn"
   }
 }
