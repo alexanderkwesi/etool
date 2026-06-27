@@ -1,0 +1,17 @@
+# ETool – Python backend requirements
+# Install with:  pip install -r requirements.txt
+
+flask>=2.3.3
+flask-cors>=4.0.0
+flask-session>=0.5.0
+SQLAlchemy>=2.0.23
+Werkzeug>=2.3.7
+python-dotenv>=1.0.0
+google-auth>=2.23.4
+PyJWT>=2.8.0
+Flask-SQLAlchemy>=3.0.5
+pyotp>=2.8.0
+qrcode[pil]>=7.4.2
+
+# PayPal  (comment out if not using payments)
+paypalrestsdk>=1.13.3
